@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/elements */ \"./src/modules/elements.js\");\n/* harmony import */ var _modules_populate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/populate */ \"./src/modules/populate.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\n\r\n_modules_elements__WEBPACK_IMPORTED_MODULE_0__.items.forEach(_modules_populate__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_elements_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/elements.js */ \"./src/modules/elements.js\");\n/* harmony import */ var _modules_populate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/populate.js */ \"./src/modules/populate.js\");\n\n\n\n\n_modules_elements_js__WEBPACK_IMPORTED_MODULE_1__.items.forEach(_modules_populate_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
 
 /***/ }),
 
@@ -125,7 +125,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"items\": () => (/* binding */ items),\n/* harmony export */   \"list\": () => (/* binding */ list)\n/* harmony export */ });\nconst list = document.querySelector('list-container');\r\nconst items = [\r\n  {\r\n    name: John,\r\n    score: 100\r\n  },\r\n  {\r\n    name: John,\r\n    score: 100\r\n  },\r\n  {\r\n    name: John,\r\n    score: 100\r\n  },\r\n  {\r\n    name: John,\r\n    score: 100\r\n  },\r\n  {\r\n    name: John,\r\n    score: 100\r\n  },\r\n];\r\n\r\n\n\n//# sourceURL=webpack://webpack-setup/./src/modules/elements.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"items\": () => (/* binding */ items),\n/* harmony export */   \"list\": () => (/* binding */ list)\n/* harmony export */ });\nconst list = document.querySelector('.list-container');\nconst items = [\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n];\n\n\n\n//# sourceURL=webpack://webpack-setup/./src/modules/elements.js?");
 
 /***/ }),
 
@@ -135,7 +135,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elements__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements */ \"./src/modules/elements.js\");\n\r\n\r\nconst populate = (item) => {\r\n  _elements__WEBPACK_IMPORTED_MODULE_0__.list.innerHTML += \r\n  `<li class=\"list-item pad\">${item.name}: ${item.score}</li>`;\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populate);\n\n//# sourceURL=webpack://webpack-setup/./src/modules/populate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elements_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements.js */ \"./src/modules/elements.js\");\n\n\nconst populate = (item) => {\n  _elements_js__WEBPACK_IMPORTED_MODULE_0__.list.innerHTML\n  += `<li class=\"list-item pad\">${item.name}: ${item.score}</li>`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populate);\n\n//# sourceURL=webpack://webpack-setup/./src/modules/populate.js?");
 
 /***/ })
 

@@ -1,5 +1,5 @@
-import { items } from './modules/elements';
-import populate from './modules/populate';
 import './style.css';
+import { items } from './modules/elements.js';
+import populate from './modules/populate.js';
 
 items.forEach(populate);
