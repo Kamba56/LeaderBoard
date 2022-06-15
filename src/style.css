@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700&family=Roboto+Mono:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Coming Soon', cursive;
+}
+
+body {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 24px 0;
+}
+
+.container {
+  width: 95%;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-space {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pad {
+  padding: 10px 5px;
+}
+
+.border {
+  border: 3px solid black;
+  border-radius: 2px;
+}
+
+/* ? ----- Header section --------- */
+header {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ? ------ List section --------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 100px;
+}
+
+.list-item:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+/* ? --------- form section ----------- */
+form input {
+  margin-bottom: 20px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.btn {
+  width: fit-content;
+  padding: 3px 10px;
+  font-size: 20px;
+  font-weight: 700;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 3px;
+  box-shadow: 3px 4px 1px #000;
+  align-self: flex-end;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
