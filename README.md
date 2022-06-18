@@ -13,13 +13,42 @@ Leaderboard is an application that displays scores submitted by different player
 
 [Live Demo Link](https://kamba56.github.io/LeaderBoard/dist/)
 
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-1. Go to the [repository page](https://github.com/Kamba56/LeaderBoard).
-2. Press the "Code" button and copy the link.
-3. Clone it using git command `git clone <https://github.com/Kamba56/LeaderBoard.git>`.
+### Prerequisites
+```
+  node js
+  npm
+
+```
+### Setup
+Clone the repository and change the directory to portfolio
+
+``` 
+  `$ git clone 'https://github.com/Kamba56/LeaderBoard.git'`
+
+  `$ cd LeaderBoard`
+
+```
+
+### Install
+Install all project dependencies by running the command below
+ 
+``` 
+ ` $ npm install`
+```
+### Usage
+
+Run
+``` 
+  `$ npm start
+```
+
+### Deployment
+- [Visit Application Homepage](http://localhost:8080)
 
 
 ## Authors
