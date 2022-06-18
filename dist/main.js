@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_elements_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/elements.js */ \"./src/modules/elements.js\");\n/* harmony import */ var _modules_populate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/populate.js */ \"./src/modules/populate.js\");\n\n\n\n\n_modules_elements_js__WEBPACK_IMPORTED_MODULE_1__.items.forEach(_modules_populate_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_populate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/populate.js */ \"./src/modules/populate.js\");\n/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getData.js */ \"./src/modules/getData.js\");\n/* harmony import */ var _modules_elements_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/elements.js */ \"./src/modules/elements.js\");\n/* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/sendData.js */ \"./src/modules/sendData.js\");\n\n\n\n\n\n\nconst loadData = async () => {\n  await (0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_2__.getData)();\n  _modules_getData_js__WEBPACK_IMPORTED_MODULE_2__.items.forEach(_modules_populate_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n};\n\nloadData();\n\n_modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.form.addEventListener('submit', (e) => {\n  e.preventDefault();\n  (0,_modules_sendData_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(_modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.form.name.value, _modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.form.score.value);\n  _modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.form.reset();\n});\n\n_modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.refresh.addEventListener('click', () => {\n  _modules_elements_js__WEBPACK_IMPORTED_MODULE_3__.list.innerHTML = '';\n  loadData();\n});\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
 
 /***/ }),
 
@@ -125,7 +125,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"items\": () => (/* binding */ items),\n/* harmony export */   \"list\": () => (/* binding */ list)\n/* harmony export */ });\nconst list = document.querySelector('.list-container');\nconst items = [\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n  {\n    name: 'John',\n    score: 100,\n  },\n];\n\n\n\n//# sourceURL=webpack://webpack-setup/./src/modules/elements.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"form\": () => (/* binding */ form),\n/* harmony export */   \"list\": () => (/* binding */ list),\n/* harmony export */   \"refresh\": () => (/* binding */ refresh),\n/* harmony export */   \"url\": () => (/* binding */ url)\n/* harmony export */ });\nconst list = document.querySelector('.list-container');\nconst form = document.querySelector('#score-form');\nconst refresh = document.querySelector('#refresh');\nconst url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/k2m4sDUcfk9YMbs6UScv/scores';\n\n\n\n//# sourceURL=webpack://webpack-setup/./src/modules/elements.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getData.js":
+/*!********************************!*\
+  !*** ./src/modules/getData.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getData\": () => (/* binding */ getData),\n/* harmony export */   \"items\": () => (/* binding */ items)\n/* harmony export */ });\n/* harmony import */ var _elements_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements.js */ \"./src/modules/elements.js\");\n\n\nconst items = [];\n\nconst getData = async () => {\n  const response = await fetch(_elements_js__WEBPACK_IMPORTED_MODULE_0__.url);\n  const scores = await response.json();\n  const x = await scores.result.sort((a, b) => b.score - a.score);\n  items.length = 0;\n  x.forEach((element) => {\n    items.push(element);\n  });\n};\n\n\n\n//# sourceURL=webpack://webpack-setup/./src/modules/getData.js?");
 
 /***/ }),
 
@@ -135,7 +145,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elements_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements.js */ \"./src/modules/elements.js\");\n\n\nconst populate = (item) => {\n  _elements_js__WEBPACK_IMPORTED_MODULE_0__.list.innerHTML\n  += `<li class=\"list-item pad\">${item.name}: ${item.score}</li>`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populate);\n\n//# sourceURL=webpack://webpack-setup/./src/modules/populate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elements_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements.js */ \"./src/modules/elements.js\");\n\n\nconst populate = (item) => {\n  _elements_js__WEBPACK_IMPORTED_MODULE_0__.list.innerHTML\n  += `<li class=\"list-item pad\">${item.user}: ${item.score}</li>`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populate);\n\n//# sourceURL=webpack://webpack-setup/./src/modules/populate.js?");
+
+/***/ }),
+
+/***/ "./src/modules/sendData.js":
+/*!*********************************!*\
+  !*** ./src/modules/sendData.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _elements_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements.js */ \"./src/modules/elements.js\");\n\n\nconst sendData = async (user, score) => {\n  await fetch(_elements_js__WEBPACK_IMPORTED_MODULE_0__.url, {\n    method: 'post',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({ user, score }),\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendData);\n\n//# sourceURL=webpack://webpack-setup/./src/modules/sendData.js?");
 
 /***/ })
 
